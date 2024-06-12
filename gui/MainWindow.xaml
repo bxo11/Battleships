@@ -1,0 +1,60 @@
+﻿<Window x:Class="gui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gui"
+        mc:Ignorable="d"
+         Title="Battleships" Height="450" Width="800">
+    <StackPanel>
+        <Grid x:Name="GameBoard">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+        <TextBlock x:Name="StatusText" Text="Select 4 fields" HorizontalAlignment="Center" 
+           FontSize="20" FontWeight="Bold" Foreground="Black" Margin="0,10,0,10"/>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <CheckBox x:Name="BoardToggle" Content="Show Enemy Board" Checked="BoardToggle_Checked" Unchecked="BoardToggle_Unchecked" Grid.Column="0"/>
+            <Button x:Name="YourShipsButton" Content="Show ships" Click="ShowShips" Grid.Column="1"/>
+            <Button x:Name="TourShootsButton" Content="Show shoots" Click="ShowShoots" Grid.Column="2"/>
+        </Grid>
+
+        <Button Content="Clear Selection" Click="ClearSelection_Click"/>
+        <Button x:Name="ContinueButton" Content="Continue" Click="HandleGameStep" Background="#FF95E47A"/>
+        <Button x:Name="RestartButton" Content="Restart Game" Click="RestartButton_Click" Background="#FFED4C4C"/>
+    </StackPanel>
+</Window>
